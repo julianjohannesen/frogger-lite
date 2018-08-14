@@ -11,9 +11,11 @@ const Player = function(){ this.sprite = '../images/char-boy.png'; };
 Player.prototype.update = function(){}
 // Draw the player on the screen
 Player.prototype.render = function(){ ctx.drawImage(Resources.get(this.sprite), this.x, this.y); }
-Player.prototype.handleInput = function(keyPress){
-    if(keyPress[0] === 37) moveRight;
-    if(keyPress[0] === )
+Player.prototype.handleInput = function(keyCode){
+    if(keyCode === 37) return moveLeft;
+    if(keyCode === 38) return moveUp;
+    if(keyCode === 39) return moveRight;
+    if(keyCode === 40) return moveDown;
 }
 
 // Array containing enemy instances
