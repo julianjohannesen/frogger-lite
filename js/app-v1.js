@@ -1,25 +1,34 @@
 // Enemies our player must avoid
-const Enemy = function(){ this.sprite = '../images/enemy-bug.png'; };
+const Entity = function(sprite, initLocation, speed){
+    this.sprite = sprite;
+    this.initLocation = initLocation;
+    this.speed = speed;
+}
 // Update the enemy's position
-Enemy.prototype.update = function(dt) { /* Multiply any movement by the dt parameter to ensure the game runs at the same speed for all computers.*/ };
+Entity.prototype.update = function(dt) { let speedThing = dt * movement; };
 // Draw the enemy on the screen
-Enemy.prototype.render = function() { ctx.drawImage(Resources.get(this.sprite), this.x, this.y); };
-
-// Our player
-const Player = function(){ this.sprite = '../images/char-boy.png'; };
-// Update the player's position
-Player.prototype.update = function(){}
-// Draw the player on the screen
-Player.prototype.render = function(){ ctx.drawImage(Resources.get(this.sprite), this.x, this.y); }
-Player.prototype.handleInput = function(keyCode){
-    if(keyCode === 37) return moveLeft;
-    if(keyCode === 38) return moveUp;
-    if(keyCode === 39) return moveRight;
-    if(keyCode === 40) return moveDown;
+Entity.prototype.render = function() { ctx.drawImage(Resources.get(this.sprite), this.x, this.y); };
+// Handle player input
+Entity.prototype.handleInput = function(direction){
+    if(direction === 37) return moveLeft();
+    if(direction === 38) return moveUp();
+    if(direction === 39) return moveRight();
+    if(direction === 40) return moveDown();
 }
 
+// The enemy
+const Enemy = function(){
+    Entity.call(this, sprite, initLocation, speed)
+}
+// Our player
+const Player = function(){
+    Entity.call(this, sprite, location, speed);
+};
+
+
 // Array containing enemy instances
-const allEnemies = [new Enemy(), new Enemy(), new Enemy()];
+const enemy1 = new Enemy(); //can this go inside the array
+const allEnemies = [enemy1];
 
 // Player instance
 const player = new Player();
