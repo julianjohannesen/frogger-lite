@@ -8,8 +8,7 @@ class Enemy {
     }
 
     update(dt) {
-        this.x *= dt;
-        this.y *= dt;
+        this.x = this.speed * dt;
 
         // check for collisions
 

@@ -12,10 +12,10 @@ var Engine = (function(global) {
     function main() {
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
-        //update(dt);
+        update(dt);
         render();
         lastTime = now;
-        win.requestAnimationFrame(main);
+        //win.requestAnimationFrame(main);
     }
 
     function init() {
