@@ -17,10 +17,10 @@ class Enemy {
     collisionCheck(){
         // Axis-aligned rectangle collision detection from: 
         // https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-        if ( this.x < (player.x + 62) && 
-            (this.x + 91) > player.x &&
-             this.y < (player.y + 72) && 
-            (this.y + 67) > player.y) {
+        if ( this.x < (player.x + 46) && 
+            (this.x + 60.5) > player.x &&
+             this.y < (player.y + 51) && 
+            (this.y + 48.5) > player.y) {
             // The objects are touching
             console.log("There was a collision!");
             alert("Woops! The bug got you! Back to the beginning!");
