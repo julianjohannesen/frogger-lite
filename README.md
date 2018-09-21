@@ -1,6 +1,27 @@
-frontend-nanodegree-arcade-game
-===============================
+# Welcome to Frogger Lite!
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## How to Play the Game
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Use your keyboard's up, down, left, and right arrow keys to move your player around the screen. Your goal is to reach the water on the other side of the road (that's the top of your screen) without being run over by a busy bug!
+
+Play the game here:
+
+[Frogger Lite!](https://julianjohannesen.github.io/frogger-lite/)
+
+Or download the repository and use your browser to navigate to and open [index.html](index.html). The repository contains all of the files you'll need to play. 
+
+## What is this
+
+This game is a required project for Udacity's Front-End Web Development Nanodgree program. The original repo can be found  here:
+
+[https://github.com/udacity/frontend-nanodegree-arcade-game](https://github.com/udacity/frontend-nanodegree-arcade-game)
+
+To complete the project, students are required to provide a Player class and several methods in [app.js](js/app.js). Much of the code, including the [engine.js](js/engine.js) and [resource.js](js/resource.js) files were provided to students.
+
+As it stands now, this is a minimal implementation.
+
+## Issue
+
+Please log any issues on the repository's issues page:
+
+[https://github.com/julianjohannesen/frogger-lite/issues](https://github.com/julianjohannesen/frogger-lite/issues)

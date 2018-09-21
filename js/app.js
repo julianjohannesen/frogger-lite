@@ -10,17 +10,25 @@ class Enemy {
     update(dt) {
         if(this.x >= 505) this.x = -101;
         this.x = this.x + 0.3 * this.speed * dt;
-        
+        this.collisionCheck();
+
+    }
+
+    collisionCheck(){
         // Axis-aligned rectangle collision detection from: 
         // https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-        if ( this.x < (player.x + 72)  && 
-            (this.x + 101) > player.x     &&
-             this.y < (player.y + 82) && 
-            (this.y + 77) > player.y) {
+        if ( this.x < (player.x + 62) && 
+            (this.x + 91) > player.x &&
+             this.y < (player.y + 72) && 
+            (this.y + 67) > player.y) {
             // The objects are touching
             console.log("There was a collision!");
-            // reset();
+            alert("Woops! The bug got you! Back to the beginning!");
+            player.x = 252-36;
+            player.y = 432;
+            
         }
+
     }
 
     render() {
@@ -33,12 +41,20 @@ class Player extends Enemy {
         super(sprite, x, y);
     }
 
+    youWon(){
+        this.x = 252-36;
+        this.y = 432;
+        alert("You won!");
+
+    }
+
     update(){
         this.x > 432  ? this.x = 432 :
         this.y > 470  ? this.y = 470 :
         this.x < 0    ? this.x = 0 :
-        this.y < 65   ? this.y = 65 :
-        null
+        this.y < 65   ? this.youWon() : 
+        null;
+
     }
 
     handleInput(keyPressed){
@@ -48,6 +64,7 @@ class Player extends Enemy {
         keyPressed === 'down'  ? this.y += 42 : 
         null
     }
+
 }
 
 function makeEnemies(num){
