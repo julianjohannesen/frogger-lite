@@ -63,7 +63,10 @@ var Engine = (function(global) {
         player.render();
     }
 
-    function reset() {}
+    function reset() {
+        console.log("Reset fires main()!");
+        // main();
+    }
 
     Resources.load([
         'images/stone-block.png',
@@ -75,4 +78,7 @@ var Engine = (function(global) {
     Resources.onReady(init);
 
     global.ctx = ctx;
+
+    return global.ctx;
+
 })(this);

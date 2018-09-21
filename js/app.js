@@ -18,13 +18,12 @@ class Enemy {
              this.y < (player.y + 82) && 
             (this.y + 77) > player.y) {
             // The objects are touching
-            console.log("collision!")
+            console.log("There was a collision!");
+            // reset();
         }
     }
 
     render() {
-        // console.log(Resources.get(this.sprite));
-        // console.log(this.x, this.y)
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
